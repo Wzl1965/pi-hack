@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pi Test Page</title>
+<title>PiPulse Node</title>
 </head>
 <body>
-<h1>Pi Node Test</h1>
+<h1>PiPulse 节点项目</h1>
+<button id="loginBtn">Pi Sign-In 登录</button>
+
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<script>
+Pi.init({ version: "2.0", sandbox: false });
+// 这里把双引号里面换成你的Client ID
+const clientId = "sBqnKxllIQeBufPvbhhhPwMLq8jpEgt2IRsMFvTek2w";
+const redirectUri = "https://wzl1965.github.io/pi-hack/callback.html";
+
+document.getElementById("loginBtn").onclick = async () => {
+  const authResult = await Pi.authenticate(["username", "payments"], redirectUri);
+  console.log(authResult);
+};
+</script>
 </body>
 </html>
