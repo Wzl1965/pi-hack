@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Pi登录回调</title>
+</head>
+<body>
+<h2>授权回调成功</h2>
+<p>参数已经收到</p >
+<script>
+const params = new URLSearchParams(location.search);
+console.log(Object.fromEntries(params));
+alert("拿到回调参数，可以去控制台查看");
+</script>
+</body>
+</html>
